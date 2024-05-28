@@ -6,6 +6,7 @@
     <title>Tasky Application</title>
     <!--Custom css-->
     <link rel="stylesheet" href="index.css">
+   
     <!-- Boot strap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
      rel="stylesheet" 
@@ -13,8 +14,116 @@
      crossorigin="anonymous">
 </head>
 
-<!--Navbar -->
+<!--CDN-For Font Awesome Icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+crossorigin="anonymous" 
+referrerpolicy="no-referrer" />
 <body>
+<!--Mobile Screen Add New Button-->
+ <div class="Add_New_button_mobile_only">
+  <button class="btn btn-info d-flex align-items-center gap-2" 
+  type="button"
+  data-bs-toggle="modal" 
+  data-bs-target="#addnewModal" 
+  modal-dialog-centered>
+      <i class="fa-solid fa-plus "></i>
+      Add New Item
+  </button>
+ </div>
+
+<!--Add New Item Modal -->
+<div class="modal fade" 
+    id="addnewModal" 
+    tabindex="-1" 
+    aria-labelledby="addnewModalLabel" 
+    aria-hidden="true"
+  >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addnewModalLabel">Add New Task</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <di class="mb-3">
+            <label for="ImageURL" class="form-label">Image URL</label>
+            <input type="url" 
+            class="form-control" 
+            id="ImageURL" 
+            aria-describedby="imageOpt" 
+            placeholder="httpd://WebDevelopment.com/">
+            <div id="imageOpt" class="form-text">Its an optional filed for us .</div>
+          </di>
+          
+         <di class="mb-3">
+              <label for="taskTittle" class="form-label">Task Tittle </Title></label>
+              <input type="text" 
+              class="form-control" 
+              id="taskTittle"
+              placeholder="Please Enter the Tittle Here" 
+              required>
+             
+         </di>
+        
+         <di class="mb-3">
+          <label for="tags" class="form-label">Task Type </Title></label>
+          <input type="text" 
+          class="form-control" 
+          id="tags"
+          placeholder="Please Enter the Task Type Here"
+          required>
+        </di>
+
+        <div class="mb-3">
+          <label for="taskDescription" class="form-label">Task Description </Title></label>
+          <textarea type="text" 
+          class="form-control" 
+          id="taskDescription"
+          placeholder="Please Enter the Description Here"
+          required>
+          </textarea>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close </button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>  
+
+<!-- Show Task Modal -->
+<!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showTask">
+
+  Launch demo modal
+</button>-->
+
+<div class="modal fade" id="showTask" tabindex="-1" aria-labelledby="showTaskLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="showTaskLabel">Task Details...</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body task_modal_body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Show Task Modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showTaskLabel">
+
+  Launch demo modal
+</button>
+
+<!--Navbar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Tasky</a>
@@ -31,18 +140,49 @@
 
                 </ul>
             
-                <button class="btn btn-outline-success" type="submit">Add New Item</button>
+                <button class="btn btn-info d-flex align-items-center gap-2" 
+                type="button"
+                data-bs-toggle="modal" 
+                data-bs-target="#addnewModal" 
+                modal-dialog-centered>
+                    <i class="fa-solid fa-plus "></i>
+                    Add New Item
+                </button>
           </div>
         </div>
       </nav>
 </body>
 
+<div class="container">
+  <section class="mt-4">
+   <div class="row justify-content-center">
+    <div class="col md-6">
+      <div class="input-group flex-nowrap shadow-lg" >
+        <input 
+        type="search" 
+        class="form-control" 
+        placeholder="Search Your Tasks Here"
+        aria-label="Username" 
+        aria-describedby="addon-wrapping"
+        >
+        <span class="input-group-text" id="basic-addon1">
+          <i class ="fas fa-magnifying-glass">
+          </i>
+        </span>
+      </div>
 
+    </div>
+   </div>
+  </section>
+  <section  class="mt-4">
+    <div class="row task_contents">
+      
+    </div>>
 
+  </section>
+</div>
 
-
-
- <!--Custom JS-->
+<!--Custom JS-->
 <body>
     <scrip src="index.js" ></script>
     <!--Boot Strap-->
